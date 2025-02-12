@@ -15,7 +15,14 @@ test:
   database: dig_dns_app_test
 
 production:
-  <<: *default
-  database: dig_dns_app_prod
-  username: postgres
-  password: 1234
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+
+cable:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
