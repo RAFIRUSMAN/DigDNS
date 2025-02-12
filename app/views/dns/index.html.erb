@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kloth.net DIG Tool Clone</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eaeaea; text-align: center; }
+    .container { width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+    input, select, button { margin: 5px; padding: 8px; }
+    pre { text-align: left; background: #f4f4f4; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DIG: look up DNS domain IP address information</h1>
+    <%= form_with url: "/lookup", method: :post, local: true do |form| %>
+      <label>Domain: </label>
+      <%= form.text_field :domain, required: true %>
+      <label>Server: </label>
+      <%= form.text_field :server, placeholder: "8.8.8.8" %>
+      <label>Query: </label>
+      <%= form.select :query, [["A (IPv4 Address)", "A"], ["AAAA (IPv6 Address)", "AAAA"], ["CNAME", "CNAME"], ["MX (Mail Exchange)", "MX"], ["TXT (Text Record)", "TXT"]] %>
+      <%= form.submit "Look it up" %>
+    <% end %>
+
+    <% if @result.present? %>
+      <h3>Result:</h3>
+      <pre><%= @result %></pre>
+    <% end %>
+  </div>
+</body>
+</html>

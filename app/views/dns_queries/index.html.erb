@@ -1,0 +1,11 @@
+<h1>DNS Query</h1>
+<%= form_with url: "/dns_lookup", method: "get", local: true do %>
+  <label for="domain">Enter Domain:</label>
+  <%= text_field_tag :domain, params[:domain] %>
+  <%= submit_tag "Query DNS" %>
+<% end %>
+
+<% if @result %>
+  <h2>Result:</h2>
+  <pre><%= @result %></pre>
+<% end %>

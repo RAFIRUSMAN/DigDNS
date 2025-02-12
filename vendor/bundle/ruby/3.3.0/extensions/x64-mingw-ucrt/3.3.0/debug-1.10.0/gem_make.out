@@ -1,0 +1,20 @@
+current directory: C:/Users/Lenovo/Documents/DIGTOOLDNS/dig_dns_app/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+C:/Ruby33-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: C:/Users/Lenovo/Documents/DIGTOOLDNS/dig_dns_app/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250212-5516-k39r9l sitelibdir\=./.gem.20250212-5516-k39r9l clean
+
+current directory: C:/Users/Lenovo/Documents/DIGTOOLDNS/dig_dns_app/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250212-5516-k39r9l sitelibdir\=./.gem.20250212-5516-k39r9l
+generating debug-x64-mingw-ucrt.def
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: C:/Users/Lenovo/Documents/DIGTOOLDNS/dig_dns_app/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250212-5516-k39r9l sitelibdir\=./.gem.20250212-5516-k39r9l install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250212-5516-k39r9l/debug
+
+current directory: C:/Users/Lenovo/Documents/DIGTOOLDNS/dig_dns_app/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250212-5516-k39r9l sitelibdir\=./.gem.20250212-5516-k39r9l clean
