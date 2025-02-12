@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kloth.net DIG Tool Clone</title>
+  <title>DNS VAULT DIG DNS</title>
   <style>
     body { font-family: Arial, sans-serif; background: #eaeaea; text-align: center; }
-    .container { width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+    .container { width: 800px; margin: auto; background: #a4beff; padding: 20px; border-radius: 10px; }
     input, select, button { margin: 5px; padding: 8px; }
-    pre { text-align: left; background: #f4f4f4; padding: 10px; }
+    pre { text-align: left; background: #F0FFFF; padding: 10px; }
+    .description {
+  font-size: 14px; 
+  text-align: justify;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.disclaimer {
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+    
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>DIG: look up DNS domain IP address information</h1>
-    <%= form_with url: "/lookup", method: :post, local: true do |form| %>
-      <label>Domain: </label>
-      <%= form.text_field :domain, required: true %>
-      <label>Server: </label>
-      <%= form.text_field :server, placeholder: "8.8.8.8" %>
-      <label>Query: </label>
-      <%= form.select :query, [["A (IPv4 Address)", "A"], ["AAAA (IPv6 Address)", "AAAA"], ["CNAME", "CNAME"], ["MX (Mail Exchange)", "MX"], ["TXT (Text Record)", "TXT"]] %>
-      <%= form.submit "Look it up" %>
-    <% end %>
+<div class="container">
+<img src="/logo.png" alt="DNSVAULT" class="logo">
+<h1>DIG: Look Up DNS Domain IP Address Information</h1>
+<p class="description">
+  Query a DNS domain nameserver to lookup and find IP address information of computers on the internet. Convert host and domain names to IP addresses and vice versa.
+</p>
+<p class="description">
+  This tool helps you check how your web hosting company or domain registrar has set up DNS records for your domain, monitor dynamic DNS changes, or investigate email and internet abuse.
+</p>
+<p class="disclaimer">
+  <strong>Note:</strong> This online service is for **private, non-commercial use only**. Please do not abuse it. **No automated queries. No bots.**
+</p>
+<div style="margin-top: 20px;">
+<%= form_with url: "/lookup", method: :post, local: true do |form| %>
+  <label>Domain: </label>
+  <%= form.text_field :domain, required: true %>
+  <label>Server: </label>
+  <%= form.text_field :server, value: "8.8.8.8", placeholder: "DNS Server (default: 8.8.8.8)" %>
+  <label>Query: </label>
+  <%= form.select :query, [["A (IPv4 Address)", "A"], ["AAAA (IPv6 Address)", "AAAA"], ["CNAME", "CNAME"], ["MX (Mail Exchange)", "MX"], ["TXT (Text Record)", "TXT"]] %>
+  <%= form.submit "Look it up" %>
+<% end %>
+</div>
 
     <% if @result.present? %>
       <h3>Result:</h3>

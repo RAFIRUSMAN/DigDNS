@@ -1,10 +1,33 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+<head>
+  <title>Kloth.net DIG Tool Clone</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #eaeaea; 
+      text-align: center; 
+    }
+    
+    .container { 
+      width: 800px; 
+      margin: auto; 
+      background: white; 
+      padding: 20px; 
+      border-radius: 10px; 
+    }
+    
+    input, select, button { 
+      margin: 5px; 
+      padding: 8px; 
+    }
+    
+    pre { 
+      text-align: left; 
+      background: #f4f4f4; 
+      padding: 10px; 
+      white-space: pre-wrap;  /* Allows text to wrap */
+      word-wrap: break-word;  /* Breaks long words if needed */
+      overflow-wrap: break-word; /* Ensures words wrap properly */
+      max-width: 100%; /* Ensures it doesn't overflow */
+    }
+  </style>
+</head>
